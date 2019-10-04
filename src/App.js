@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import Search from './components/Search';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {};
+
+  searchTerm = 'morty';
+
+  getRickandMorty = async e => {
+    e.preventDefault();
+
+    const searchQuery = e.target.elements.char.value;
+
+    const api_call = await fetch(
+      `https://rickandmortyapi.com/api/character/?name=${searchQuery}`
+    );
+
+    const data = await api_call.json();
+  };
+
+  render() {
+    return (
+      <div className='wrapper'>
+        <div className='main'>
+          <div className='container'>
+            <Search getRickandMorty={this.getRickandMorty} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
