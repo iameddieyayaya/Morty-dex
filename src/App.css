@@ -1,7 +1,13 @@
 .wrapper {
-  background: url('img/portal_3.jpg') center center no-repeat;
+  background: url('img/portal_3.jpg') center;
+  background-size: 150%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pokeCard {
+  background: white;
+  height: 50vh;
 }
