@@ -6,11 +6,12 @@ const Search = props => {
       <input
         type='text'
         name='char'
-        placeholder='Search...'
+        placeholder='Find Character...'
         required
         autoComplete='off'
+        style={{ marginRight: '5px' }}
       />
-      <button>Find Character</button>
+      <button className='ui primary button'>Search</button>
     </form>
   );
 };

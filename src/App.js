@@ -1,7 +1,6 @@
 import React from 'react';
 import Search from './components/Search';
-import MortyDex from './components/MortyDex';
-
+import PokeDexUI from './components/PokeDexUI';
 import './App.css';
 
 class App extends React.Component {
@@ -10,7 +9,8 @@ class App extends React.Component {
   getRickandMorty = async e => {
     e.preventDefault();
 
-    const searchQuery = e.target.elements.char.value;
+    let searchQuery = e.target.elements.char.value;
+    e.target.reset();
     const api_call = await fetch(
       `https://rickandmortyapi.com/api/character/?name=${searchQuery}`
     );
@@ -57,7 +57,7 @@ class App extends React.Component {
         <div className='main'>
           <div className='container'>
             <Search getRickandMorty={this.getRickandMorty} />
-            <MortyDex
+            <PokeDexUI
               name={name}
               gender={gender}
               image={image}
