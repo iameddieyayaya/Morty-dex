@@ -56,7 +56,9 @@ class App extends React.Component {
       <div className='wrapper'>
         <div className='main'>
           <div className='container'>
-            <Search getRickandMorty={this.getRickandMorty} />
+            <div className='searchbar'>
+              <Search getRickandMorty={this.getRickandMorty} />
+            </div>
             <PokeDexUI
               name={name}
               gender={gender}
