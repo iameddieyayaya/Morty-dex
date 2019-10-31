@@ -4,7 +4,9 @@ import PokeDexUI from './components/PokeDexUI';
 import './App.css';
 
 class App extends React.Component {
-  state = {};
+  state = {
+    image: 'https://media.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif'
+  };
 
   getRickandMorty = async e => {
     e.preventDefault();
